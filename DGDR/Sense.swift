@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Sense: String {
+enum Sense: String, Codable {
     case eye
     case nose
     case ear
