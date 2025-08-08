@@ -179,6 +179,91 @@ struct MockData {
     ]
 }
 
+// MARK: - reports 목 데이터
+extension MockData {
+    static let reports: [UserTypeReport] = [
+            UserTypeReport(
+                id: 1,
+                title: "무더니스트",
+                descriptionLines: [
+                    "어떤 풍파에도 무던하게 반응하는",
+                    "당신은 무더니스트입니다.",
+                    "어떤 룸메이트를 만나더라도",
+                    "평화로운 생활을 할 수 있을 거예요."
+                ]
+            ),
+            UserTypeReport(
+                id: 2,
+                title: "에어팟 이식필요",
+                descriptionLines: [
+                    "청각에 민감한",
+                    "당신은 에어팟 이식필요 유형입니다.",
+                    "소리에 예민하여 조용한 환경을",
+                    "가장 편안하게 느낍니다."
+                ]
+            ),
+            UserTypeReport(
+                id: 3,
+                title: "마이뷰 컨트롤러",
+                descriptionLines: [
+                    "시야 속 질서와 빛을 중요하게 생각하는",
+                    "당신은 마이뷰 컨트롤러입니다.",
+                    "눈앞의 공간이 편안해야",
+                    "마음도 편안합니다."
+                ]
+            ),
+            UserTypeReport(
+                id: 4,
+                title: "에어퀄리티 지킴이",
+                descriptionLines: [
+                    "공기의 질과 향기에 민감한",
+                    "당신은 에어퀄리티 지킴이입니다.",
+                    "신선한 공기와 적당한 향이",
+                    "생활의 질을 높여줍니다."
+                ]
+            ),
+            UserTypeReport(
+                id: 5,
+                title: "프라이버시 마스터",
+                descriptionLines: [
+                    "개인 공간과 심리적 거리가 중요한",
+                    "당신은 프라이버시 마스터입니다.",
+                    "나만의 안전 구역이 있을 때",
+                    "가장 편안합니다."
+                ]
+            ),
+            UserTypeReport(
+                id: 6,
+                title: "눈치빠른 센스러",
+                descriptionLines: [
+                    "두 가지 감각에 민감한",
+                    "당신은 눈치빠른 센스러입니다.",
+                    "방 안의 변화, 룸메이트와의 분위기까지",
+                    "빠르게 읽고 상황에 맞춰 반응합니다."
+                ]
+            ),
+            UserTypeReport(
+                id: 7,
+                title: "예민 상위권",
+                descriptionLines: [
+                    "대부분의 감각에 예민한",
+                    "당신은 예민 상위권입니다.",
+                    "세심하게 환경을 관리하고",
+                    "불편 요소를 최소화하려 합니다."
+                ]
+            ),
+            UserTypeReport(
+                id: 8,
+                title: "풀옵션 예민 끝판왕",
+                descriptionLines: [
+                    "모든 감각에 예민한",
+                    "당신은 풀옵션 예민 끝판왕입니다.",
+                    "완벽하게 조율된 환경에서",
+                    "가장 빛나는 타입입니다."
+                ]
+            )
+        ]
+}
 
 struct Question: Identifiable {
     let id: Int
@@ -189,4 +274,10 @@ struct Question: Identifiable {
 struct Choice: Identifiable {
     let id = UUID()
     let text: String
+}
+
+struct UserTypeReport: Identifiable {
+    let id: Int
+    let title: String
+    let descriptionLines: [String]
 }

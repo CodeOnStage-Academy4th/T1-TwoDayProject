@@ -37,8 +37,8 @@ struct DGDRApp: App {
                             TypeCheckView(type: type)
                         case .chemistry:
                             ChemistryView()
-                        case .report:
-                            ReportView(selectedChoiceIndex: [1, 2, 3])
+                        case .report(let qnaList):
+                            ReportView(selectedChoiceIndex: qnaList)
                         }
                     }
             }
