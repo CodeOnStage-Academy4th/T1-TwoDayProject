@@ -10,7 +10,7 @@ import Foundation
 enum Path: Hashable {
     case home
     case qna
-    case typecheck(type: String)
+    case typecheck(type: String, entry: EntryContext)
     case chemistry
     case report(qnaList: [QnA])
 }

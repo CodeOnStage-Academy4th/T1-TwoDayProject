@@ -40,7 +40,7 @@ struct HomeView: View {
             }
             Button(action: {
                 // type 부분에 내 유형 넣기
-                coordinator.push(.typecheck(type: "무더니스트"))
+                coordinator.push(.typecheck(type: "무더니스트", entry: .fromHome))
             }) {
                 Text("내 유형 보기")
                     .frame(height: 64)
