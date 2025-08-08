@@ -14,6 +14,22 @@ struct TypeCheckView: View {
     let type: String
     
     var body: some View {
-        Text("유형확인 뷰")
+        if let report = MockData.reports.first(where: { $0.title == type }) {
+            
+            ScrollView {
+                MyTypeComponent(
+                    type: report.title,
+                    description: report.descriptionLines.joined(separator: "\n")
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 24)
+                .padding(.bottom, 40)
+            }
+            .navigationTitle("테스트결과")
+        } else {
+            Text("해당 유형의 리포트를 찾을 수 없어요.")
+                .foregroundColor(.gray)
+                .padding()
+        }
     }
 }
