@@ -14,6 +14,6 @@ enum Sense: String, Codable {
     case eye
     // --0-
     case nose
-    // --0-
+    // ---0
     case touch
 }
