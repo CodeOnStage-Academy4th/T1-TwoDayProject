@@ -41,7 +41,7 @@ import Foundation
  
  */
 
-enum SenseLevel {
+enum SenseLevel: Codable {
     case nonSense
     case singleSense(Sense)
     case doubleSense(Sense, Sense)
