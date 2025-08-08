@@ -11,6 +11,6 @@ struct ChemistryView: View {
     @EnvironmentObject private var coordinator: Coordinator
 
     var body: some View {
-        Text("내용")
+        Text("궁합 뷰")
     }
 }

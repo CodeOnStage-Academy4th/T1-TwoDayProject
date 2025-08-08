@@ -14,6 +14,6 @@ struct TypeCheckView: View {
     let type: String
     
     var body: some View {
-        Text("내용")
+        Text("유형확인 뷰")
     }
 }

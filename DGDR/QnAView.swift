@@ -11,6 +11,6 @@ struct QnAView: View {
     @EnvironmentObject private var coordinator: Coordinator
 
     var body: some View {
-        Text("내용")
+        Text("테스트 뷰")
     }
 }
