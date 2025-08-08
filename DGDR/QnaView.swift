@@ -232,5 +232,3 @@ struct SavedAnswer: Codable {
     QnAView()
         .modelContainer(for: [QnA.self, User.self], inMemory: true)
 }
-
-
