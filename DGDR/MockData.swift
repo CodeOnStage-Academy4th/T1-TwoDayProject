@@ -9,38 +9,176 @@ import Foundation
 
 struct MockData {
     static let questions: [Question] = [
+        // MARK: - 청각
         Question(
             id: 1,
-            text: "방 안에 조명은 어디까지 허용가능한가요?",
+            text: "룸메의 기상 알람이 계속 울리면, 당신의 반응은?",
             choices: [
-                Choice(text: "잘 때는 완전 어두워야해요."),
-                Choice(text: "노트북에서 나오는 빛까지는 괜찮아요."),
-                Choice(text: "책상 스탠드까지는 괜찮아요."),
-                Choice(text: "조명을 다 켜도 상관없어요.")
+                Choice(text: "그대로 숙면 가능"),
+                Choice(text: "룸메 일어날 시간인가 보네"),
+                Choice(text: "여러 번 울리는데 왜 안 일어나냐..."),
+                Choice(text: "알람 소리 좀 안나게 해라~!!")
             ]
         ),
         Question(
             id: 2,
-            text: "소음에 대한 민감도는 어떤가요?",
+            text: "방에서 노트북 사용 허용 기준은?",
             choices: [
-                Choice(text: "아주 민감해요(작은 소리도 신경쓰임)."),
-                Choice(text: "조용하면 좋아요."),
-                Choice(text: "어느 정도 소음은 괜찮아요."),
-                Choice(text: "활기찬 분위기를 좋아해요.")
+                Choice(text: "기계식 피씨방 키보드 사용해도 괜찮아"),
+                Choice(text: "맥북 키보드까지는 괜찮아"),
+                Choice(text: "키스킨 사용하면 괜찮아"),
+                Choice(text: "노트북 작업은 메인랩에서 끝내줘")
             ]
         ),
         Question(
             id: 3,
-            text: "청소/정리 습관은?",
+            text: "릴스/짧은 영상 시청은 어떻게 해줬으면 해?",
             choices: [
-                Choice(text: "매일 정리하고 싶어요."),
-                Choice(text: "주 1회 정리면 충분해요."),
-                Choice(text: "한 번 어지르면 오래 가요."),
-                Choice(text: "정리는 거의 안 해요.")
+                Choice(text: "블루투스 스피커 써도 돼"),
+                Choice(text: "이어폰 안 쓰고 편하게 틀어도 돼"),
+                Choice(text: "이어폰 안 쓰고 볼륨 세 칸 정도는 괜찮아"),
+                Choice(text: "봐도 되지~ 이어폰 끼고.")
+            ]
+        ),
+        Question(
+            id: 4,
+            text: "드라이기 소음(머리 말리기) 허용 범위는?",
+            choices: [
+                Choice(text: "그럼~ 나 잘 때 말려도 돼"),
+                Choice(text: "방에서 편하게 말려"),
+                Choice(text: "약한 바람으로만 말려줘"),
+                Choice(text: "머리는 세면대에서 말려줄래?")
+            ]
+        ),
+
+        // MARK: - 시각
+        Question(
+            id: 5,
+            text: "나는 졸린데 룸메는 깨어 있을 때, 조명은?",
+            choices: [
+                Choice(text: "불 켜진 채로도 딥슬립 가능"),
+                Choice(text: "혹시 책상 스탠드만 켜줄 수 있을까?"),
+                Choice(text: "핸드폰/노트북 밝기도 약간 거슬려"),
+                Choice(text: "나 졸려. 우리 불 끄고 자자.")
+            ]
+        ),
+        Question(
+            id: 6,
+            text: "바닥 머리카락(청결)에 대한 기준은?",
+            choices: [
+                Choice(text: "나 탈모인가? 하고 청소 안 한다."),
+                Choice(text: "나중에 청소할 때 한 번에 치운다."),
+                Choice(text: "하루에 한 번 정도는 돌돌이로 정리한다."),
+                Choice(text: "수시로 보일 때마다 돌돌이로 정리한다.")
+            ]
+        ),
+        Question(
+            id: 7,
+            text: "팀원이 방에 와서 잠깐 얘기해도 될까?",
+            choices: [
+                Choice(text: "완전 좋지! 나도 친해질래~"),
+                Choice(text: "그래~ 잠깐이면 괜찮지~"),
+                Choice(text: "이번 한 번만이다"),
+                Choice(text: "안돼. 팀원이랑은 세션 때 이야기 끝내.")
+            ]
+        ),
+        Question(
+            id: 8,
+            text: "새로 산 물건을 우리 침대 사이에 둬도 될까?",
+            choices: [
+                Choice(text: "그럼~ 내 침대 위에 둬도 돼."),
+                Choice(text: "잠시 두고 나중에는 치워줘~"),
+                Choice(text: "너 개인공간 정리하고 거기에 둬"),
+                Choice(text: "너 더이상 쇼핑 금지.")
+            ]
+        ),
+
+        // MARK: - 후각
+        Question(
+            id: 9,
+            text: "방 안에서 향수/방향제 사용 기준은?",
+            choices: [
+                Choice(text: "얼마든지 사용해도 괜찮아!"),
+                Choice(text: "페브리즈 정도는 괜찮아"),
+                Choice(text: "향수는 밖에 나가서 사용해줘"),
+                Choice(text: "나랑 사는 동안, 향수는 사용하지 말아줘.")
+            ]
+        ),
+        Question(
+            id: 10,
+            text: "방에서 야식 섭취 허용 범위는?",
+            choices: [
+                Choice(text: "방에서 고기 구워 먹어도 괜찮아"),
+                Choice(text: "방에서 라면 먹어도 괜찮아"),
+                Choice(text: "방에서 초콜릿이나 젤리는 괜찮아"),
+                Choice(text: "방에서는 물만 마시자")
+            ]
+        ),
+        Question(
+            id: 11,
+            text: "방 환기는 언제/how 자주 하면 좋을까?",
+            choices: [
+                Choice(text: "출입할 때로 환기는 충분해"),
+                Choice(text: "냄새 날 때만 환기해도 충분해"),
+                Choice(text: "하루에 한 번은 창문 열고 환기해야 돼"),
+                Choice(text: "현관문, 창문 둘 다 열고 환기하자!")
+            ]
+        ),
+        Question(
+            id: 12,
+            text: "샤워/세면(냄새 관리) 기준은?",
+            choices: [
+                Choice(text: "뭐 언젠간 씻겠지~"),
+                Choice(text: "냄새만 안 나면 괜찮아."),
+                Choice(text: "하루 한 번이면 괜찮아."),
+                Choice(text: "아침, 저녁으로 씻어줘, 부탁이야...")
+            ]
+        ),
+
+        // MARK: - 촉각(심리적 거리)
+        Question(
+            id: 13,
+            text: "여름철 에어컨 사용 방식은?",
+            choices: [
+                Choice(text: "나는 파워 냉방도, 에어컨이 없어도 괜찮아."),
+                Choice(text: "나는 그냥 적당히 시원하면 돼~!"),
+                Choice(text: "나는 21도로 중간 바람 세기로 해줘~"),
+                Choice(text: "나는 에어컨 온도 조절 나만 하고 싶어.")
+            ]
+        ),
+        Question(
+            id: 14,
+            text: "신체적 거리감(스킨십/접촉) 허용 범위는?",
+            choices: [
+                Choice(text: "한 침대에 누워서 회고도 가능해요~"),
+                Choice(text: "룸메와 포옹도 가능해요~"),
+                Choice(text: "룸메와 어깨동무 할 수 있어요~"),
+                Choice(text: "룸메와 닿고 싶지 않아요.")
+            ]
+        ),
+        Question(
+            id: 15,
+            text: "같이 식사하는 빈도는?",
+            choices: [
+                Choice(text: "매번 너랑 밥 같이 먹어도 돼"),
+                Choice(text: "하루에 한 번은 너랑 같이 밥 먹어도 돼"),
+                Choice(text: "일주일에 한 번 정도는 같이 밥 먹을 수 있어"),
+                Choice(text: "우리 밥은 따로 먹자.")
+            ]
+        ),
+        Question(
+            id: 16,
+            text: "물건 공유 허용 범위는?",
+            choices: [
+                Choice(text: "속옷까지 공유 가능"),
+                Choice(text: "가방 혹은 겉옷 공유 가능"),
+                Choice(text: "드라이기, 고데기 정도 공유 가능"),
+                Choice(text: "네 꺼 써.")
             ]
         )
     ]
 }
+
 
 struct Question: Identifiable {
     let id: Int

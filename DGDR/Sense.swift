@@ -8,8 +8,8 @@
 import Foundation
 
 enum Sense: String, Codable {
+    case ear
     case eye
     case nose
-    case ear
     case touch
 }

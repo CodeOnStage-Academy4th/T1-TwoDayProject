@@ -71,9 +71,9 @@ extension SenseLevel {
         var activeSenses: [Sense] = []
         
         // 각 비트 위치에 따른 감각 확인
-        if codeArray[0] == "1" { activeSenses.append(.eye) }
-        if codeArray[1] == "1" { activeSenses.append(.nose) }
-        if codeArray[2] == "1" { activeSenses.append(.ear) }
+        if codeArray[0] == "1" { activeSenses.append(.ear) }
+        if codeArray[1] == "1" { activeSenses.append(.eye) }
+        if codeArray[2] == "1" { activeSenses.append(.nose) }
         if codeArray[3] == "1" { activeSenses.append(.touch) }
         
         // 활성화된 감각 수에 따라 SenseLevel 반환
