@@ -31,14 +31,19 @@ struct DGDRApp: App {
                         switch path {
                         case .home:
                             HomeView()
+                                .toolbar(.hidden, for: .navigationBar)
                         case .qna:
                             QnAView()
-                        case .typecheck(let type):
-                            TypeCheckView(type: type)
+                                .toolbar(.hidden, for: .navigationBar)
+                        case .typecheck(let type, let entry):
+                            TypeCheckView(type: type, context: entry)
+                                .toolbar(.hidden, for: .navigationBar)
                         case .chemistry:
                             ChemistryView()
+                                .toolbar(.hidden, for: .navigationBar)
                         case .report(let qnaList):
                             ReportView(selectedChoiceIndex: qnaList)
+                                .toolbar(.hidden, for: .navigationBar)
                         }
                     }
             }
