@@ -18,31 +18,37 @@ struct NavigationBar: View {
     
     var body: some View {
         ZStack {
-            if showBackButton {
-                Button {
-                    coordinator.popLast()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .font(Font.custom("SF Pro", size: 24))
-                        .frame(width: 51, alignment: .center)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+            HStack {
+                if showBackButton {
+                    Button {
+                        coordinator.popLast()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .font(Font.custom("SF Pro", size: 24))
+                            .frame(width: 51, alignment: .center)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
+                
+                Spacer()
+                
+                if showPageButton {
+                    Button {
+                        coordinator.push(.report)
+                    } label: {
+                        Image(systemName: "book.pages")
+                            .font(Font.custom("SF Pro", size: 24))
+                            .frame(width: 51, alignment: .center)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
                 }
             }
             
             Text(title)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .center)
+                .allowsHitTesting(false)
             
-            if showPageButton {
-                Button {
-                    coordinator.push(.report)
-                } label: {
-                    Image(systemName: "book.pages")
-                        .font(Font.custom("SF Pro", size: 24))
-                        .frame(width: 51, alignment: .center)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-            }
         }
         .foregroundStyle(Color.labelNormal)
         .frame(height: 62)
