@@ -13,9 +13,7 @@ struct DGDRApp: App {
     @StateObject private var coordinator = Coordinator()
     
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
+        let schema = Schema([QnA.self, User.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
@@ -46,6 +44,6 @@ struct DGDRApp: App {
             }
             .environmentObject(coordinator)
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(for: [QnA.self, User.self])
     }
 }
