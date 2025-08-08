@@ -39,6 +39,8 @@ struct DGDRApp: App {
                             ChemistryView()
                         case .report:
                             ReportView(selectedChoiceIndex: [1, 2, 3])
+                        case .roomieTypeSelect:
+                            RoomieTypeSelectView()
                         }
                     }
             }

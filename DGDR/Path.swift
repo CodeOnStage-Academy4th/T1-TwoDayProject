@@ -13,4 +13,5 @@ enum Path: Hashable {
     case typecheck(type: String)
     case chemistry
     case report
+    case roomieTypeSelect
 }
