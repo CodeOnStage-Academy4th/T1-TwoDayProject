@@ -41,11 +41,15 @@ import Foundation
  
  */
 
-enum SenseLevel: Codable {
+enum SenseLevel: Codable, CaseIterable, Hashable {
+    static var allCases: [SenseLevel] = [
+        .nonSense, .singleSense(.ear), .singleSense(.eye), .singleSense(.nose), .singleSense(.touch), .doubleSense,.tripleSense, .allSense
+    ]
+    
     case nonSense
     case singleSense(Sense)
-    case doubleSense(Sense, Sense)
-    case tripleSense(Sense, Sense, Sense)
+    case doubleSense
+    case tripleSense
     case allSense
     
     
@@ -71,9 +75,9 @@ extension SenseLevel {
         var activeSenses: [Sense] = []
         
         // 각 비트 위치에 따른 감각 확인
-        if codeArray[0] == "1" { activeSenses.append(.eye) }
-        if codeArray[1] == "1" { activeSenses.append(.nose) }
-        if codeArray[2] == "1" { activeSenses.append(.ear) }
+        if codeArray[0] == "1" { activeSenses.append(.ear) }
+        if codeArray[1] == "1" { activeSenses.append(.eye) }
+        if codeArray[2] == "1" { activeSenses.append(.nose) }
         if codeArray[3] == "1" { activeSenses.append(.touch) }
         
         // 활성화된 감각 수에 따라 SenseLevel 반환
@@ -83,62 +87,13 @@ extension SenseLevel {
         case 1:
             return .singleSense(activeSenses[0])
         case 2:
-            return .doubleSense(activeSenses[0], activeSenses[1])
+            return .doubleSense
         case 3:
-            return .tripleSense(activeSenses[0], activeSenses[1], activeSenses[2])
+            return .tripleSense
         case 4:
             return .allSense
         default:
             return nil
         }
-    }
-    
-    // SenseLevel을 코드로 변환하는 static 함수
-    static func getCode(from senseLevel: SenseLevel) -> String {
-        var codeArray: [Character] = ["0", "0", "0", "0"]
-        
-        switch senseLevel {
-        case .nonSense:
-            return "0000"
-            
-        case .singleSense(let sense):
-            setSenseBit(&codeArray, sense)
-            
-        case .doubleSense(let sense1, let sense2):
-            setSenseBit(&codeArray, sense1)
-            setSenseBit(&codeArray, sense2)
-            
-        case .tripleSense(let sense1, let sense2, let sense3):
-            setSenseBit(&codeArray, sense1)
-            setSenseBit(&codeArray, sense2)
-            setSenseBit(&codeArray, sense3)
-            
-        case .allSense:
-            return "1111"
-        }
-        
-        return String(codeArray)
-    }
-    
-    // 헬퍼 함수: 특정 감각에 해당하는 비트를 1로 설정
-    private static func setSenseBit(_ codeArray: inout [Character], _ sense: Sense) {
-        switch sense {
-        case .eye:
-            codeArray[0] = "1"
-        case .nose:
-            codeArray[1] = "1"
-        case .ear:
-            codeArray[2] = "1"
-        case .touch:
-            codeArray[3] = "1"
-        }
-    }
-}
-
-// MARK: - Instance Methods
-extension SenseLevel {
-    // 현재 인스턴스의 code 반환
-    var code: String {
-        return SenseLevel.getCode(from: self)
     }
 }
