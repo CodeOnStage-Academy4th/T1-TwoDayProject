@@ -35,7 +35,24 @@ struct NavigationBar: View {
             
             if showPageButton {
                 Button {
-                    coordinator.push(.report)
+                    coordinator.push(.report(qnaList: [
+                        QnA(number: 1, answer: 1),
+                        QnA(number: 2, answer: 3),
+                        QnA(number: 3, answer: 2),
+                        QnA(number: 4, answer: 4),
+                        QnA(number: 5, answer: 1),
+                        QnA(number: 6, answer: 2),
+                        QnA(number: 7, answer: 4),
+                        QnA(number: 8, answer: 3),
+                        QnA(number: 9, answer: 2),
+                        QnA(number: 10, answer: 1),
+                        QnA(number: 11, answer: 3),
+                        QnA(number: 12, answer: 4),
+                        QnA(number: 13, answer: 2),
+                        QnA(number: 14, answer: 1),
+                        QnA(number: 15, answer: 4),
+                        QnA(number: 16, answer: 3)
+                    ]))
                 } label: {
                     Image(systemName: "book.pages")
                         .font(Font.custom("SF Pro", size: 24))
