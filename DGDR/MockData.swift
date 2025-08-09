@@ -183,7 +183,7 @@ struct MockData {
 extension MockData {
     static let reports: [UserTypeReport] = [
             UserTypeReport(
-                id: 1,
+                id: SenseLevel.nonSense,
                 title: "무더니스트",
                 descriptionLines: [
                     "어떤 풍파에도 무던하게 반응하는",
@@ -193,7 +193,7 @@ extension MockData {
                 ]
             ),
             UserTypeReport(
-                id: 2,
+                id: SenseLevel.singleSense(.ear),
                 title: "에어팟 이식필요",
                 descriptionLines: [
                     "청각에 민감한",
@@ -203,7 +203,7 @@ extension MockData {
                 ]
             ),
             UserTypeReport(
-                id: 3,
+                id: SenseLevel.singleSense(.eye),
                 title: "마이뷰 컨트롤러",
                 descriptionLines: [
                     "시야 속 질서와 빛을 중요하게 생각하는",
@@ -213,7 +213,7 @@ extension MockData {
                 ]
             ),
             UserTypeReport(
-                id: 4,
+                id: SenseLevel.singleSense(.nose),
                 title: "에어퀄리티 지킴이",
                 descriptionLines: [
                     "공기의 질과 향기에 민감한",
@@ -223,7 +223,7 @@ extension MockData {
                 ]
             ),
             UserTypeReport(
-                id: 5,
+                id: SenseLevel.singleSense(.touch),
                 title: "프라이버시 마스터",
                 descriptionLines: [
                     "개인 공간과 심리적 거리가 중요한",
@@ -233,7 +233,7 @@ extension MockData {
                 ]
             ),
             UserTypeReport(
-                id: 6,
+                id: SenseLevel.doubleSense,
                 title: "눈치빠른 센스러",
                 descriptionLines: [
                     "두 가지 감각에 민감한",
@@ -243,7 +243,7 @@ extension MockData {
                 ]
             ),
             UserTypeReport(
-                id: 7,
+                id: SenseLevel.tripleSense,
                 title: "예민 상위권",
                 descriptionLines: [
                     "대부분의 감각에 예민한",
@@ -253,7 +253,7 @@ extension MockData {
                 ]
             ),
             UserTypeReport(
-                id: 8,
+                id: SenseLevel.allSense,
                 title: "풀옵션 예민 끝판왕",
                 descriptionLines: [
                     "모든 감각에 예민한",
@@ -358,7 +358,7 @@ struct Choice: Identifiable {
 }
 
 struct UserTypeReport: Identifiable {
-    let id: Int
+    let id: SenseLevel
     let title: String
     let descriptionLines: [String]
 }

@@ -44,6 +44,9 @@ struct DGDRApp: App {
                         case .report(let qnaList):
                             ReportView(selectedChoiceIndex: qnaList)
                                 .toolbar(.hidden, for: .navigationBar)
+                        case .roomieTypeSelect:
+                            RoomieTypeSelectView()
+                                .toolbar(.hidden, for: .navigationBar)
                         }
                     }
             }
