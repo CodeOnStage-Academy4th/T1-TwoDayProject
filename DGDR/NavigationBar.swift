@@ -52,7 +52,6 @@ struct NavigationBar: View {
                             QnA(number: 15, answer: 4),
                             QnA(number: 16, answer: 3)
                         ]))
-
                     } label: {
                         Image(systemName: "book.pages")
                             .font(Font.custom("SF Pro", size: 24))
@@ -65,7 +64,7 @@ struct NavigationBar: View {
             Text(title)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .center)
-                .allowsHitTesting(false)            
+                .allowsHitTesting(false)
         }
         .foregroundStyle(Color.labelNormal)
         .frame(height: 62)

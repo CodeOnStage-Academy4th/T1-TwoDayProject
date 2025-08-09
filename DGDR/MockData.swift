@@ -265,6 +265,87 @@ extension MockData {
         ]
 }
 
+// MARK - 내 유형에 대한 특징
+extension MockData {
+    static let mySenseReports: [Sense?: SenseReport] = [
+        nil: SenseReport(
+                    title: "🧘 모든 감각으로부터 평화로워요.",
+                    description: """
+        무던한 당신의 성격으로 당신은 기숙사 생활을 하기에 매우 적합한 사람이군요!
+        룸메이트의 고민과 걱정을 먼저 물어보는 건 어떨까요?
+        """
+                ),
+                .ear: SenseReport(
+                    title: "👂 청각이 발달했어요.",
+                    description: """
+        청각이 발달하였으므로 알람 소리의 크기와 빈도,
+        노트북 사용 시 키보드 소리 등에 대해 이야기 해보기를 추천해요!
+        """
+                ),
+                .nose: SenseReport(
+                    title: "👃🏻 후각이 발달했어요.",
+                    description: """
+        키보드 소리, 어쩌구 소리, 어쩌구 소리에도 예민하게 반응할 수 있어요.
+        이런 소리, 저런 소리에 대한 기준을 정하면 좋아요.
+        """
+                ),
+                .eye: SenseReport(
+                    title: "👁️ 시각이 발달했어요.",
+                    description: """
+        시각이 발달하였으므로 숙면을 위한 환경의 밝기 정도,
+        방 청소의 주기 등에 대해 이야기 해보기를 추천해요!
+        """
+                ),
+                .touch: SenseReport(
+                    title: "🙌 촉각이 발달했어요.",
+                    description: """
+        촉각이 발달하였으므로 룸메이트와의 거리감,
+        방안의 환경과 분위기 조성에 대한 이야기를 해보기를 추천해요!
+        """
+                )
+        ]
+}
+
+extension MockData {
+    static let roomieSenseReports: [Sense?: SenseReport] = [
+        nil: SenseReport(
+                    title: "🧘 모든 감각으로부터 평화로워요.",
+                    description: """
+        당신의 룸메이트는 무던한 성격으로 기숙사 생활을 하기에 매우 적합한 사람입니다.
+        당신의 고민과 걱정을 먼저 이야기 해보는 건 어떨까요?
+        """
+                ),
+                .ear: SenseReport(
+                    title: "👂 청각이 발달했어요.",
+                    description: """
+        청각이 발달하였으므로 알람 소리의 크기와 빈도,
+        노트북 사용 시 키보드 소리 등에 대해 이야기 해보기를 추천해요!
+        """
+                ),
+                .nose: SenseReport(
+                    title: "👃🏻 후각이 발달했어요.",
+                    description: """
+        키보드 소리, 어쩌구 소리, 어쩌구 소리에도 예민하게 반응할 수 있어요.
+        이런 소리, 저런 소리에 대한 기준을 정하면 좋아요.
+        """
+                ),
+                .eye: SenseReport(
+                    title: "👁️ 시각이 발달했어요.",
+                    description: """
+        시각이 발달하였으므로 숙면을 위한 환경의 밝기 정도,
+        방 청소의 주기 등에 대해 이야기 해보기를 추천해요!
+        """
+                ),
+                .touch: SenseReport(
+                    title: "🙌 촉각이 발달했어요.",
+                    description: """
+        촉각이 발달하였으므로 룸메이트와의 거리감,
+        방안의 환경과 분위기 조성에 대한 이야기를 해보기를 추천해요!
+        """
+                )
+        ]
+}
+
 struct Question: Identifiable {
     let id: Int
     let text: String
@@ -280,4 +361,9 @@ struct UserTypeReport: Identifiable {
     let id: SenseLevel
     let title: String
     let descriptionLines: [String]
+}
+
+struct SenseReport {
+    let title: String
+    let description: String
 }

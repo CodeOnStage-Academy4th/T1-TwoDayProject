@@ -14,7 +14,7 @@ struct HomeView: View {
         VStack {
             Spacer()
             
-            Image("HomeLogo")
+            Image("Logo")
             
             Spacer()
             
@@ -28,19 +28,19 @@ struct HomeView: View {
                     .background(.primaryPink)
                     .cornerRadius(12)
             }
-            Button(action: {
-                coordinator.push(.chemistry)
-            }) {
-                Text("룸메랑 궁합보기")
-                    .frame(height: 64)
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.white)
-                    .background(.primaryPinkLight)
-                    .cornerRadius(12)
-            }
+//            Button(action: {
+//                coordinator.push(.chemistry)
+//            }) {
+//                Text("룸메랑 궁합보기")
+//                    .frame(height: 64)
+//                    .frame(maxWidth: .infinity)
+//                    .foregroundColor(.white)
+//                    .background(.primaryPinkLight)
+//                    .cornerRadius(12)
+//            }
             Button(action: {
                 // type 부분에 내 유형 넣기
-                coordinator.push(.typecheck(type: "무더니스트"))
+                coordinator.push(.typecheck(type: "무더니스트", entry: .fromHome))
             }) {
                 Text("내 유형 보기")
                     .frame(height: 64)
