@@ -49,6 +49,8 @@ struct TypeCheckView: View {
                 Text("해당 유형의 리포트를 찾을 수 없어요.")
                     .foregroundColor(.gray)
                     .padding()
+                
+                Spacer()
             }
             
             if showBottomButton {
