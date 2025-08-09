@@ -165,7 +165,7 @@ struct QnAView: View {
         
         try? modelContext.save()
         
-        coordinator.push(.typecheck(type: senseCode))
+        coordinator.push(.typecheck(type: senseCode, entry: .fromQnA))
     }
     
     // 선택(0~3)을 무던/예민으로 즉시 판정

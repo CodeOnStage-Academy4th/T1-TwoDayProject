@@ -14,7 +14,7 @@ struct HomeView: View {
         VStack {
             Spacer()
             
-            Image("HomeLogo")
+            Image("Logo")
             
             Spacer()
             
