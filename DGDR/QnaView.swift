@@ -27,7 +27,7 @@ struct QnAView: View {
         
         VStack(spacing: 20) {
             // 상단 네비게이션
-            NavigationBar(title:"\(index+1)/\(questions.count)", showBackButton: true, showPageButton: true)
+            NavigationBar(title:"\(index+1)/\(questions.count)", showBackButton: true, showPageButton: false)
 
             // 질문
             Text(q.text)
