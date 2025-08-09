@@ -116,7 +116,8 @@ struct QnAView: View {
                 } label: {
                     if index == questions.count - 1 {
                         Text("완료")
-                            .frame(width: .infinity, height: 72)
+                            .frame(height: 72)
+                            .frame(maxWidth: .infinity)
                     } else {
                             
                         ZStack {
@@ -127,7 +128,8 @@ struct QnAView: View {
                                     .padding(.horizontal, 16)
                             }
                         }
-                        .frame(width: .infinity, height: 72)
+                        .frame(height: 72)
+                        .frame(maxWidth: .infinity)
                     }
                 }
                 .font(.system(size: 24, weight: .semibold))
