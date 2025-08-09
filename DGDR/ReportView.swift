@@ -10,14 +10,14 @@ import SwiftUI
 struct ReportView: View {
     @EnvironmentObject private var coordinator: Coordinator
 
-    let selectedChoiceIndex: [Int] // [선택한 질문 index]
+    let selectedChoiceIndex: [QnA] // [선택한 질문 index]
 
     var body: some View {
         ScrollView {
             VStack(spacing: 24) {
                 ForEach(MockData.questions.indices, id: \.self) { index in
                     let question = MockData.questions[index]
-                    let selectedIndex = selectedChoiceIndex[index]
+                    let selectedAnswer = selectedChoiceIndex.first(where: { $0.number == question.id })?.answer
 
                     VStack(alignment: .leading, spacing: 16) {
                         Text("\(question.id). \(question.text)")
@@ -28,12 +28,12 @@ struct ReportView: View {
                             ForEach(question.choices.indices, id: \.self) { choiceIndex in
                                 Text(question.choices[choiceIndex].text)
                                     .foregroundColor(
-                                        choiceIndex == selectedIndex
+                                        choiceIndex + 1 == selectedAnswer // answer는 1~4
                                         ? Color(.black)
                                         : Color(.black).opacity(0.3)
                                     )
                                     .fontWeight(
-                                        choiceIndex == selectedIndex ? .semibold : .regular
+                                        choiceIndex + 1 == selectedAnswer ? .semibold : .regular
                                     )
                                     .padding(.vertical, 4)
                                     .padding(.horizontal, 8)
