@@ -27,26 +27,17 @@ struct QnAView: View {
         
         VStack(spacing: 20) {
             // 상단 네비게이션
-            HStack {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .foregroundStyle(.black)
-                }
-                Spacer()
-                Text("\(index+1)/\(questions.count)")
-                    .foregroundStyle(.secondary)
-                Spacer()
-                // 오른쪽은 비워둠
-                Spacer().frame(width: 24)
-            }
-            
+            NavigationBar(title:"\(index+1)/\(questions.count)", showBackButton: true, showPageButton: true)
+
             // 질문
             Text(q.text)
-                .font(.title3.bold())
+                .font(
+                Font.custom("Pretendard", size: 20)
+                .weight(.bold)
+                )
                 .multilineTextAlignment(.center)
-                .padding(.vertical, 8)
+                .padding(.vertical, 40)
+                .foregroundColor(Color(red: 0.31, green: 0.17, blue: 0.1))
             
             // 보기 리스트
             VStack(spacing: 12) {
@@ -64,14 +55,22 @@ struct QnAView: View {
                             .padding()
                             .background(
                                 RoundedRectangle(cornerRadius: 14)
+                                    .inset(by: 1.5)
+                                    .stroke(Color(red: 1, green: 0.69, blue: 0.69), lineWidth: 3)
                                     .fill(isSelected ? Color.pink.opacity(0.3) : Color.white)
+                                    .frame(width: 361, height: 78)
                             )
                             .overlay(
                                 RoundedRectangle(cornerRadius: 14)
-                                    .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                                    .inset(by: 1.5)
+                                    .stroke(Color(red: 0.84, green: 0.82, blue: 0.8), lineWidth: 3)
+                                    .frame(width: 361, height: 78)
+                                    
                             )
+                        
                     }
                     .buttonStyle(.plain)
+                    .frame(width: 361, height: 78)
                 }
             }
 
@@ -87,11 +86,23 @@ struct QnAView: View {
                         selectedChoiceIndex = pickedChoices[questions[index].id]
                     }
                 } label: {
-                    Label("이전", systemImage: "chevron.left")
-                        .frame(maxWidth: .infinity)
+                    ZStack {
+                        HStack {
+                            Image(systemName: "chevron.left")
+                                .padding(.horizontal, 16)
+                            Spacer()
+                        }
+                        Text("이전")
+                    }
+                    .frame(width: .infinity, height: 72)
                 }
+                .font(.system(size: 24, weight: .semibold))
                 .buttonStyle(.bordered)
+                .foregroundStyle(.white)
+                .background(Color(red: 0.88, green: 0.88, blue: 0.88))
+                .cornerRadius(16)
                 .disabled(index == 0) // 첫 질문에서는 비활성화
+                .padding(.leading, 16)
                 
                 // 다음 / 완료 버튼
                 Button {
@@ -105,17 +116,29 @@ struct QnAView: View {
                 } label: {
                     if index == questions.count - 1 {
                         Text("완료")
-                            .frame(maxWidth: .infinity)
+                            .frame(width: .infinity, height: 72)
                     } else {
-                        Label("다음", systemImage: "chevron.right")
-                            .frame(maxWidth: .infinity)
+                            
+                        ZStack {
+                            Text("다음")
+                            HStack {
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .padding(.horizontal, 16)
+                            }
+                        }
+                        .frame(width: .infinity, height: 72)
                     }
                 }
+                .font(.system(size: 24, weight: .semibold))
                 .buttonStyle(.borderedProminent)
+                .foregroundStyle(.white)
+                .tint(Color(red: 1, green: 0.69, blue: 0.69))
+                .cornerRadius(16)
                 .disabled(selectedChoiceIndex == nil) // 선택 안했을 때 비활성화
+                .padding(.trailing, 16)
             }
         }
-        .padding(20)
         .onChange(of: index) {
             // 인덱스 바뀔 때 선택 복원
             selectedChoiceIndex = pickedChoices[questions[index].id]
